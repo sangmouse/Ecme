@@ -15,7 +15,10 @@ const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
       },
-      {},
+      {
+        path: "/user/create",
+        // element :
+      },
     ],
   },
 ]);
