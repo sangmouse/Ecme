@@ -4,9 +4,11 @@
   justify-content: space-between;
   gap: 24px;
   background: #fff;
-  padding: 16px 24px;
+  padding: 16px;
   max-width: 1400px;
   margin: 50px auto;
+  overflow: hidden;
+  border-radius: 8px;
 
   img {
     max-width: 120px;
