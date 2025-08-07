@@ -4,7 +4,9 @@ import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayoutRoot from "./components/LayoutRoot";
-import HomePage from "./HomePage";
+import HomePage from "./components/HomePage";
+import UserDetail from "./components/UserDetail";
+import UserForm from "./components/UserForm";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +18,12 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: "/user/:id/view",
+        element: <UserDetail />,
+      },
+      {
         path: "/user/create",
-        // element :
+        element: <UserForm />,
       },
     ],
   },
