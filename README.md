@@ -46,3 +46,18 @@ sass
 },
 npm install sass react-router-dom json-server
 npm install concurrently
+
+1. npm install
+2. npm start
+
+3. signin page
+   - click button signin =>
+     - kiểm tra xem nếu username & password trống => hiển thị message lỗi
+       - All field is required!
+     - khi người dùng onChange vào ô input => xóa bỏ lỗi đi
+     - style cho message lỗi màu đỏ
+     - khi nhập đủ 2 field, click button =>
+       - ktra nếu username = larry & password = larry123 => hiển thị message thông báo : Signin successfully!
+     - nếu account sai => hiển thị message lỗi : Account incorrect!
+     - style cho message thành công => màu xanh
+     - sau 1s => điều hướng về home

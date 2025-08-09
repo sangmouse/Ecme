@@ -7,6 +7,7 @@ import LayoutRoot from "./components/LayoutRoot";
 import HomePage from "./components/HomePage";
 import UserDetail from "./components/UserDetail";
 import UserForm from "./components/UserForm";
+import SignIn from "./components/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <UserForm />,
       },
     ],
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
   },
 ]);
 
