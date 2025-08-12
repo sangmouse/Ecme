@@ -52,7 +52,7 @@ npm install concurrently
 
 3. signin page
    - click button signin =>
-     - kiểm tra xem nếu username & password trống => hiển thị message lỗi
+     - kiểm tra xem nếu username || password trống => hiển thị message lỗi
        - All field is required!
      - khi người dùng onChange vào ô input => xóa bỏ lỗi đi
      - style cho message lỗi màu đỏ

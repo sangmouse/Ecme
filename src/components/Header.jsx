@@ -3,6 +3,8 @@ import style from "../styles/Header.module.scss";
 import signIn from "../assets/img/ic-signin.png";
 
 export default function Header() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <section className={style.header}>
       <Link to="/">
@@ -13,15 +15,24 @@ export default function Header() {
       </Link>
       <div className={style.header_author}>
         <p className={style.header_username}>
-          Morning, <strong>Larry!</strong>
+          Morning, <strong>{user?.username}</strong>
         </p>
         <p>|</p>
-        <button className={style.header_cta}>
-          <span>Signin</span>
-          <span>
-            <img src={signIn} alt="" />
-          </span>
-        </button>
+        {!user?.username ? (
+          <button className={style.header_cta}>
+            <span>Signin</span>
+            <span>
+              <img src={signIn} alt="" />
+            </span>
+          </button>
+        ) : (
+          <button className={style.header_cta}>
+            <span>Signout</span>
+            <span>
+              <img src={signIn} alt="" />
+            </span>
+          </button>
+        )}
       </div>
     </section>
   );
