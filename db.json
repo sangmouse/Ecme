@@ -1,1 +1,11 @@
-{}
+{
+   "users": [
+      {
+         "id": "c875",
+         "username": "larry",
+         "role": "ba",
+         "company": "fpt",
+         "address": "HN"
+      }
+   ]
+}
