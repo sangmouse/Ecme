@@ -68,8 +68,8 @@ export default function UserForm() {
               type="text"
               name="username"
               id="username"
-              placeholder="Larry"
-              value={user?.user}
+              placeholder="Enter user name"
+              value={user?.username}
               onChange={(event) => {
                 setUser({
                   ...user,
@@ -123,7 +123,7 @@ export default function UserForm() {
               type="text"
               name="address"
               id="address"
-              placeholder="Larry"
+              placeholder="Enter address"
               value={user?.address}
               onChange={(event) => {
                 setUser({
