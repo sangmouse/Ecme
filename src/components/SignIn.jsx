@@ -1,9 +1,10 @@
 import s from "../styles/SignIn.module.scss";
 import icLogo from "../assets/img/ic-logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
+  const userStorage = JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -37,6 +38,12 @@ export default function SignIn() {
       }, 1000);
     }
   }
+
+  useEffect(() => {
+    if (userStorage?.username) {
+      navigate("/");
+    }
+  }, []);
 
   function changeUsername(event) {
     setUser({
