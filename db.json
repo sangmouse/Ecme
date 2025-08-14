@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "c875",
-      "username": "larry",
-      "role": "ba",
+      "id": "fac4",
+      "username": "John",
+      "role": "dev",
       "company": "fpt",
-      "address": "HN"
+      "address": "HCM City"
     }
   ]
 }

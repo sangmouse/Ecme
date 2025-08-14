@@ -10,6 +10,12 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
 
+  function onRemoveUser(id) {
+    fetch(`http://localhost:3001/users/${id}`, {
+      method: "DELETE",
+    });
+  }
+
   useEffect(function () {
     fetch("http://localhost:3001/users")
       .then((res) => res.json())
@@ -34,7 +40,7 @@ export default function HomePage() {
         <tr>
           <th>User</th>
           <th>Role</th>
-          <th>Department</th>
+          <th>Company</th>
           <th>Address</th>
           <th>Actions</th>
         </tr>
@@ -52,7 +58,7 @@ export default function HomePage() {
                 <button onClick={() => navigate(`/user/${user?.id}/edit`)}>
                   <img src={editIcon} alt="" />
                 </button>
-                <button>
+                <button onClick={() => onRemoveUser(user?.id)}>
                   <img src={removeIcon} alt="" />
                 </button>
               </td>
