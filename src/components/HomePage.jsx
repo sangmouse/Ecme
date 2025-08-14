@@ -6,6 +6,36 @@ import s from "../styles/LayoutRoot.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+export const ROLE = [
+  {
+    value: "dev",
+    label: "Developer",
+  },
+  {
+    value: "ba",
+    label: "Business Analyst",
+  },
+  {
+    value: "tester",
+    label: "Tester",
+  },
+];
+
+export const COMPANY = [
+  {
+    value: "cmc",
+    label: "CMC Global",
+  },
+  {
+    value: "fpt",
+    label: "FTP Software",
+  },
+  {
+    value: "vti",
+    label: "VTI Group",
+  },
+];
+
 export default function HomePage() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
@@ -48,8 +78,10 @@ export default function HomePage() {
           return (
             <tr>
               <td>{user?.username}</td>
-              <td>{user?.role}</td>
-              <td>{user?.company}</td>
+              <td>{ROLE.find((item) => item.value === user?.role).label}</td>
+              <td>
+                {COMPANY.find((item) => item.value === user?.company).label}
+              </td>
               <td>{user?.address}</td>
               <td>
                 <button onClick={() => navigate(`/user/${user?.id}/view`)}>

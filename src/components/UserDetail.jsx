@@ -2,6 +2,7 @@ import s from "../styles/UserDetail.module.scss";
 import signIn from "../assets/img/ic-signin.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { COMPANY, ROLE } from "./HomePage";
 
 export default function UserDetail() {
   const params = useParams();
@@ -14,9 +15,12 @@ export default function UserDetail() {
       .then((data) => setUser(data));
   }
 
-  useEffect(function () {
-    fetchUser();
-  }, []);
+  useEffect(
+    function () {
+      fetchUser();
+    },
+    [params?.id]
+  );
 
   return (
     <section className={s.detail}>
@@ -34,12 +38,14 @@ export default function UserDetail() {
         </li>
         <li>
           <span>
-            Role : <b>{user?.role}</b>
+            Role :{" "}
+            <b>{ROLE.find((item) => item.value === user?.role)?.label}</b>
           </span>
         </li>
         <li>
           <span>
-            Department : <b>{user?.company}</b>
+            Department :{" "}
+            <b>{COMPANY.find((item) => item.value === user?.company)?.label}</b>
           </span>
         </li>
         <li>
