@@ -24,18 +24,33 @@ export default function UserForm() {
       return;
     }
 
-    fetch("http://localhost:3001/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...user }),
-    }).then(() => {
-      setMsg("Created user sucessfully!");
-      timeoutID = setTimeout(() => {
-        navigate("/");
-      }, 500);
-    });
+    if (params?.id) {
+      fetch(`http://localhost:3001/users/${params?.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...user }),
+      }).then(() => {
+        setMsg("Updated user sucessfully!");
+        timeoutID = setTimeout(() => {
+          navigate("/");
+        }, 500);
+      });
+    } else {
+      fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...user }),
+      }).then(() => {
+        setMsg("Created user sucessfully!");
+        timeoutID = setTimeout(() => {
+          navigate("/");
+        }, 500);
+      });
+    }
   }
 
   function onCancel() {

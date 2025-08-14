@@ -46,7 +46,7 @@ export default function HomePage() {
               <td>{user?.company}</td>
               <td>{user?.address}</td>
               <td>
-                <button>
+                <button onClick={() => navigate(`/user/${user?.id}/view`)}>
                   <img src={eyeIcon} alt="" />
                 </button>
                 <button onClick={() => navigate(`/user/${user?.id}/edit`)}>
